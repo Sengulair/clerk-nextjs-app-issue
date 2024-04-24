@@ -13,12 +13,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      // Comment line below to remove bug
+      appearance={{}}
+    >
       <html lang="en">
         <body>
           <header>
             <SignedOut>
-              <SignInButton />
+              <SignInButton mode="modal" />
             </SignedOut>
             <SignedIn>
               <UserButton />
