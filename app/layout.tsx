@@ -1,11 +1,8 @@
 import {
   ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
 } from "@clerk/nextjs";
 import "./globals.css";
+import { Header } from "./components/Header";
 
 export default function RootLayout({
   children,
@@ -13,20 +10,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider
-      // Comment line below to remove bug
-      appearance={{}}
-    >
+    <ClerkProvider>
       <html lang="en">
         <body>
-          <header>
-            <SignedOut>
-              <SignInButton mode="modal" />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </header>
+          <Header />
           <main>{children}</main>
         </body>
       </html>
