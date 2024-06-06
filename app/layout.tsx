@@ -13,10 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider
-      // Comment line below to remove bug
-      appearance={{}}
-    >
+    <ClerkProvider>
       <html lang="en">
         <body>
           <header>
